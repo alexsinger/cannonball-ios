@@ -91,10 +91,10 @@ class SignInViewController: UIViewController, UIAlertViewDelegate {
                 Crashlytics.sharedInstance().setUserIdentifier(session?.userID)
 
                 // Log Answers Custom Event.
-                Answers.logLogin(withMethod: "Digits", success: true, customAttributes: ["User ID": session?.userID])
+                Answers.logLogin(withMethod: "Digits", success: true, customAttributes: ["User ID": session?.userID as Any])
             } else {
                 // Log Answers Custom Event.
-                Answers.logLogin(withMethod: "Digits", success: false, customAttributes: ["Error": error?.localizedDescription])
+                Answers.logLogin(withMethod: "Digits", success: false, customAttributes: ["Error": error?.localizedDescription as Any])
             }
         }
     }

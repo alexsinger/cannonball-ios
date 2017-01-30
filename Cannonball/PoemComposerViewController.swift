@@ -179,7 +179,7 @@ class PoemComposerViewController: UIViewController, UICollectionViewDataSource, 
                 performSegue(withIdentifier: "ShowHistory", sender: countdownView)
             } else {
                 // Go back to the theme chooser.
-                navigationController?.popViewController(animated: true)
+                _ = navigationController?.popViewController(animated: true)
             }
         case 10:
             // Change the color of Shuffle to red as well.

@@ -55,7 +55,7 @@ class PoemHistoryViewController: UITableViewController, PoemCellDelegate {
         let videoConfiguration = MOPUBNativeVideoAdRenderer.rendererConfiguration(with: videoSettings)
 
         // Setup the ad placer.
-        placer = MPTableViewAdPlacer(tableView: tableView, viewController: self, rendererConfigurations: [staticConfiguration, videoConfiguration])
+        placer = MPTableViewAdPlacer(tableView: tableView, viewController: self, rendererConfigurations: [staticConfiguration as Any, videoConfiguration as Any])
 
         // Add targeting parameters.
         let targeting = MPNativeAdRequestTargeting()
