@@ -293,10 +293,12 @@
 					92A47B12199FCE4D00EDF6A8 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = GFTZW43FBX;
+						LastSwiftMigration = 0820;
 					};
 					92A47B24199FCE4E00EDF6A8 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = 8B65ZQA388;
+						LastSwiftMigration = 0820;
 						TestTargetID = 92A47B12199FCE4D00EDF6A8;
 					};
 				};
@@ -497,6 +499,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.fabric.samples.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Cannonball;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -516,6 +519,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.fabric.samples.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Cannonball;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -538,6 +542,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.twitter.fabric.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CannonballTests;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cannonball.app/Cannonball";
 			};
 			name = Debug;
@@ -557,6 +562,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.twitter.fabric.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CannonballTests;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cannonball.app/Cannonball";
 			};
 			name = Release;
