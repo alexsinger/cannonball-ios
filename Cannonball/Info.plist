@@ -20,6 +20,42 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>a07e518a1911cf79dd8d0c9ece899b4f5d9c3040</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>consumerKey</key>
+					<string>vmCrEsreYw89PsV8bTV9296TV</string>
+					<key>consumerSecret</key>
+					<string>uECLdlEvjGKFnlH3S8eOOPol17Aun8sMN5MQGnvXvsqA1lmSqp</string>
+				</dict>
+				<key>KitName</key>
+				<string>Twitter</string>
+			</dict>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>consumerKey</key>
+					<string>vmCrEsreYw89PsV8bTV9296TV</string>
+					<key>consumerSecret</key>
+					<string>uECLdlEvjGKFnlH3S8eOOPol17Aun8sMN5MQGnvXvsqA1lmSqp</string>
+				</dict>
+				<key>KitName</key>
+				<string>Digits</string>
+			</dict>
+		</array>
+	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
