@@ -18,8 +18,12 @@ import UIKit
 import TwitterKit
 import DigitsKit
 import Crashlytics
+import Firebase
 
 class SignInViewController: UIViewController, UIAlertViewDelegate {
+    
+    let welcomeMessageKey = "welcome_message"
+    let remoteConfig = FIRRemoteConfig.remoteConfig()
 
     // MARK: Properties
 
@@ -29,10 +33,19 @@ class SignInViewController: UIViewController, UIAlertViewDelegate {
 
     @IBOutlet weak var signInPhoneButton: UIButton!
 
+    @IBOutlet weak var welcomeLabel: UILabel!
+    
     // MARK: View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let remoteConfigSettings = FIRRemoteConfigSettings(developerModeEnabled: true)
+        remoteConfig.configSettings = remoteConfigSettings!
+        
+        remoteConfig.setDefaultsFromPlistFileName("RemoteConfigDefaults")
+        
+        fetchRemoteConfigs()
 
         // Color the logo.
         logoView.image = logoView.image?.withRenderingMode(.alwaysTemplate)
@@ -47,7 +60,34 @@ class SignInViewController: UIViewController, UIAlertViewDelegate {
         let image = UIImage(named: "Phone")?.withRenderingMode(.alwaysTemplate)
         signInPhoneButton.setImage(image, for: UIControlState())
     }
+    
+    func fetchRemoteConfigs() {
+        welcomeLabel.text = remoteConfig[welcomeMessageKey].stringValue
+        
+        var expirationDuration = 3600
+        
+        // If in developer mode cacheExpiration is set to 0 so each fetch will retrieve values from
+        // the server.
+        if remoteConfig.configSettings.isDeveloperModeEnabled {
+            expirationDuration = 0
+        }
+        
+        remoteConfig.fetch(withExpirationDuration: TimeInterval(expirationDuration)) { (status, error) -> Void in
+            if status == .success {
+                print("Config fetched!")
+                self.remoteConfig.activateFetched()
+            } else {
+                print("Config not fetched")
+                print("Error \(error!.localizedDescription)")
+            }
+            self.displayWelcome()
+        }
+    }
 
+    func displayWelcome() {
+        welcomeLabel.text = remoteConfig[welcomeMessageKey].stringValue
+    }
+    
     fileprivate func navigateToMainAppScreen() {
         performSegue(withIdentifier: "ShowThemeChooser", sender: self)
     }

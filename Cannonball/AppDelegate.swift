@@ -20,6 +20,8 @@ import Crashlytics
 import TwitterKit
 import DigitsKit
 import MoPub
+import Firebase
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,6 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Register Crashlytics, Twitter, Digits and MoPub with Fabric.
         Fabric.with([Crashlytics.self, Twitter.self, Digits.self, MoPub.self])
+        
+        // Initialize Firebase
+        FIRApp.configure()
 
         // Check for an existing Twitter or Digits session before presenting the sign in screen.
         if Twitter.sharedInstance().sessionStore.session() == nil && Digits.sharedInstance().session() == nil {
